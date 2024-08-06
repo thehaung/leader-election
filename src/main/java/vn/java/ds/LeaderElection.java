@@ -98,6 +98,7 @@ public class LeaderElection implements Watcher {
                         log.warn("Disconnected from Zookeeper");
                     }
                 }
+
                 break;
             case NodeDeleted:
                 try {
@@ -106,6 +107,7 @@ public class LeaderElection implements Watcher {
                     log.error("ReElectLeader failure", ex);
                     Thread.currentThread().interrupt();
                 }
+
                 break;
             default:
                 break;
